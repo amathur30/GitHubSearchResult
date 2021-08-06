@@ -13,7 +13,7 @@ ${followers}  //input[@id='search_followers']
 ${license}  //select[@id='search_license']
 ${Search_Button}  //button[@type='submit']
 ${link_text}  //a[.='mvoloskov/decider']
-${a}=  //div[@id='readme']
+${Repository_file}=  //div[@id='readme']
 
 
 
@@ -80,12 +80,11 @@ Search Git Hub Result
     Verify that there is only one repository result  1
     Click on the link
     Navigate to Repository page
-    ${b}  Get text  ${a}
-    ${d}  Remove String  ${b}  ${SPACE}
-    ${c}  Get Substring  ${d}  0  301
-    log to console  ${c}
+    ${All_Text}  Get text  ${Repository_file}
+    ${Remove_Space}  Remove String  ${All_Text}  ${SPACE}
+    ${Get_First_300_Characters}  Get Substring  ${Remove_Space}  0  301
+    log to console  ${Get_First_300_Characters}
     sleep  10s
     close browser
-
 
 
