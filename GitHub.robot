@@ -16,6 +16,7 @@ ${link_text}  //a[.='mvoloskov/decider']
 ${Repository_file}=  //div[@id='readme']
 
 
+
 *** Keywords ***
 Select Language
    [Arguments]  ${Value}
@@ -32,15 +33,15 @@ Click on Enter
 Click on Advanced Search
    click element  ${Advanced_Search}
 
-Enter with the stars
+Enter with this many stars
    [Arguments]  ${Value}
    input text  ${stars}  ${Value}
 
-Enter followers
+Enter with this many followers
    [Arguments]  ${Value}
    input text  ${followers}  ${Value}
 
-Select License
+Select with this License
    [Arguments]  ${Value}
    click element  ${license}
    click element  //option[.='${Value}']
@@ -62,17 +63,21 @@ Verify that there is only one repository result
   [Arguments]  ${Value}
   Element text should be  //h3[contains(.,'${Value} repository result')]  ${Value} repository result
 
+Focus on search box
+  Set Focus To Element  ${input_text}
+
 *** Test Cases ***
 Search Git Hub Result
     open browser   ${url}  ${browser}
     maximize browser window
+    Focus on search box
     Enter the input text in search field  react
     Click on Enter
     Click on Advanced Search
     Select Language  JavaScript
-    Enter with the stars  >45
-    Enter followers  >50
-    Select License  Boost Software License 1.0
+    Enter with this many stars  >45
+    Enter with this many followers  >50
+    Select with this License  Boost Software License 1.0
     #click element  //form[@id='search_form']
     Click on Seacrh button
     Verify the link text  mvoloskov/decider
@@ -85,5 +90,4 @@ Search Git Hub Result
     log to console  ${Get_First_300_Characters}
     sleep  10s
     close browser
-
 
