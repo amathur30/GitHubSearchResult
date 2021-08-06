@@ -78,7 +78,6 @@ Search Git Hub Result
     Enter with this many stars  >45
     Enter with this many followers  >50
     Select with this License  Boost Software License 1.0
-    #click element  //form[@id='search_form']
     Click on Seacrh button
     Verify the link text  mvoloskov/decider
     Verify that there is only one repository result  1
