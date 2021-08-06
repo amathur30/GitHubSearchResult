@@ -13,8 +13,7 @@ ${followers}  //input[@id='search_followers']
 ${license}  //select[@id='search_license']
 ${Search_Button}  //button[@type='submit']
 ${link_text}  //a[.='mvoloskov/decider']
-${Repository_file}=  //div[@id='readme']
-
+${Repository_file}  //div[@id='readme']
 
 
 *** Keywords ***
