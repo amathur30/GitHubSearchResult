@@ -69,6 +69,7 @@ Focus on search box
 *** Test Cases ***
 Search Git Hub Result
     open browser   ${url}  ${browser}
+    Set selenium speed  2s
     maximize browser window
     Focus on search box
     Enter the input text in search field  react
@@ -87,6 +88,5 @@ Search Git Hub Result
     ${Remove_Space}  Remove String  ${All_Text}  ${SPACE}
     ${Get_First_300_Characters}  Get Substring  ${Remove_Space}  0  301
     log to console  ${Get_First_300_Characters}
-    sleep  10s
     close browser
 
