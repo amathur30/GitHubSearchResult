@@ -15,7 +15,6 @@ ${Search_Button}  //button[@type='submit']
 ${link_text}  //a[.='mvoloskov/decider']
 ${Repository_file}  //div[@id='readme']
 
-
 *** Keywords ***
 Select Language
    [Arguments]  ${Value}
@@ -88,4 +87,5 @@ Search Git Hub Result
     ${Get_First_300_Characters}  Get Substring  ${Remove_Space}  0  301
     log to console  ${Get_First_300_Characters}
     close browser
+
 
