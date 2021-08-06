@@ -16,7 +16,6 @@ ${link_text}  //a[.='mvoloskov/decider']
 ${Repository_file}=  //div[@id='readme']
 
 
-
 *** Keywords ***
 Select Language
    [Arguments]  ${Value}
